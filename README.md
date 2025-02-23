@@ -396,3 +396,8 @@ To implement the **other topics** you mentioned (e.g., **Spring Boot MVC**, **Se
 ---
 
 By integrating these topics into your project, you’ll gain hands-on experience and a deeper understanding of how they work in real-world applications. Let me know if you need further guidance!
+
+
+create two response dto for intercommunication and one for return to client
+UserResponseDto
+UserServiceResponseDto
