@@ -30,10 +30,15 @@ public class UserServiceImpl implements UserService {
     @Override
     public ResponseEntity<ResponseDto<?>> register(UserRequestDto userRequestDto) throws AppServiceException {
         try {
-            Optional<Users> users = userRepository.findByUsernameAndEmail(userRequestDto.getUsername(), userRequestDto.getEmail());
-            if (users.isPresent()){
+            if (userRepository.findByUsername(userRequestDto.getUsername()).isPresent()){
+                throw new AppValidationException();
+            }
+
+            if (userRepository.findByEmail(userRequestDto.getEmail()).isPresent()){
                 throw new AppValidationException()
             }
+
+
 
             userRepository.save();
         } catch (Exception exception) {

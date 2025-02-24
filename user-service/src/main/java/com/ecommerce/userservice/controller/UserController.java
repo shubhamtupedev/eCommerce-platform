@@ -6,10 +6,7 @@ import com.ecommerce.commonlib.dto.UserRequestDto;
 import com.ecommerce.userservice.service.UserService;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("api/v1/users")
@@ -23,6 +20,17 @@ public class UserController {
 
     @PostMapping("register")
     public ResponseEntity<ResponseDto<?>> register(@RequestBody @Valid UserRequestDto userRequestDto) {
-return userService.
+        return userService.register(userRequestDto);
     }
+
+    @GetMapping
+    public ResponseEntity<ResponseDto<?>> fetchUser(){
+
+    }
+
+    @GetMapping
+
+    @PutMapping
+
+    @DeleteMapping
 }
